@@ -15,10 +15,11 @@ int factorial(int n){
 }
 
 int main(){
-    int n;
-    cin>>n;
+    int n,r;
+    cin>>n>>r;
      
-    cout<<factorial(n);
+    int ans = factorial(n) / (factorial(r)*factorial(n-r));
+    cout<<ans;
     return 0;
     
 }
