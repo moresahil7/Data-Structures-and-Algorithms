@@ -8,6 +8,7 @@ int main(){
     cin>>n;
     int arr[n];
 
+cout<<"Enter elements in an array"<<endl;
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
@@ -16,25 +17,30 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-
-
-
-    for(int i=0;i<n-1;i++){
-        for(int j=i+1;j<n;j++){
-            if(arr[i]>arr[j]){
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
-            }
+    for(int i=1; i<n ; i++){
+        int current = arr[i];
+        int j = i-1;
+        while( arr[j]>current && j>=0 ){
+            arr[j+1] = arr[j];
+            j--;
         }
+        arr[j+1] = current;
+        current++;
        
-
     }
-    cout<<"Sorted elements in an array are"<<endl;
+  
+ 
+
+
+
+
+
+
+    cout<<"Sorted elements are"<<endl;
+
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
-
 
 
 
