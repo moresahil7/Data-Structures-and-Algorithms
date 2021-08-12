@@ -1,4 +1,3 @@
-for(int i=0 ; i<6 ; i++){
-    //     cout<<*ptr<<endl;
-    //     ptr++;
-    // }
+    // int *bptr = &aptr;
+
+    // cout<<bptr;
