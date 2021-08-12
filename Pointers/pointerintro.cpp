@@ -9,7 +9,18 @@ int main(){
     int *aptr = &a;
 
 
-    cout<<aptr<<endl;
+    cout<<aptr<<endl;  // this will return address of a
+
+
+    cout<<*aptr<<endl; // this will return value of a
+
+    *aptr = 100; // can modify the value of a
+
+
+
+    cout<<a;
+
+
 
     return 0;
 }
