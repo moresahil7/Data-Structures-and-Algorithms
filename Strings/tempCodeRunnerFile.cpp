@@ -1,26 +1,13 @@
-#include<iostream>
-#include<string>
-using namespace std;
+    string str = "ABCDEF";
+
+// //    cout<<'A'-'a'<< endl;
 
 
-
-int main() {
-    string str = "abcdef";
-
-    // cout<<'a'-'A'<< endl;
-
+// for(int i=0;i<=str.size();i++){
+//     if(str[i]>='A' && str[i]<='Z'){
+//         str[i] = str[i]+32;
+//     }
 
 
-    for(int i =0;i<=str.size();i++){
-        if(str[i]>='a' && str[i]<='z'){
-            str[i] = str[i]-32;
-        }
-
-    }
-    cout<<str;
-
-
-    return 0;
-
-  
-}
+// }
+//     cout<<str;
