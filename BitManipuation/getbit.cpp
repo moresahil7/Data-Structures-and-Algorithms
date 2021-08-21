@@ -6,7 +6,10 @@ int bit(int a , int pos){
 }
 
 int main(){
-    cout<<bit(5,2)<<endl;
+
+    int a,b;
+    cin>>a>>b;
+    cout<<bit(a,b)<<endl;
 
 
 

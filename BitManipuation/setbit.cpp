@@ -6,7 +6,7 @@ int bit(int a , int pos){
 }
 
 int main(){
-    cout<<bit(5,3)<<endl;
+    cout<<bit(5,1)<<endl;
 
 
 
