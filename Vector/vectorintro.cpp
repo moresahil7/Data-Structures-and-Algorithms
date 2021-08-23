@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 #include<vector>
 using namespace std;
 
@@ -7,10 +8,10 @@ int main(){
 
     vector <int> v;
 
-    v.push_back(12);
-    v.push_back(15);
-    v.push_back(17);
-    v.push_back(16);
+    v.push_back(25);
+    v.push_back(13);
+    v.push_back(150);
+    v.push_back(10);
 
 
 
@@ -61,7 +62,21 @@ int main(){
     vector<int> v3(3,45);
 
     for(auto element:v3){
-        cout<<element;
+        cout<<element<<" ";
+    }
+    cout<<endl;
+
+    vector<int> v4;
+    v4.push_back(34);
+    v4.push_back(56);
+    v4.push_back(06);
+    v4.push_back(86);
+    v4.push_back(576);
+
+
+    sort(v4.begin(),v4.end());
+    for(auto element:v4){
+        cout<<element<<" ";
     }
 
 
