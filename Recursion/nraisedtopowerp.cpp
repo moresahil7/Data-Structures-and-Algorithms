@@ -1,5 +1,5 @@
  #include<iostream>
- #include<math.h>
+
  using namespace std;
 
 
@@ -10,7 +10,7 @@ int Power(int n, int p){
     }
 
 
-    int prevPower= pow(n , p-1);
+    int prevPower= Power(n , p-1);
     return n*prevPower;
 }
 
