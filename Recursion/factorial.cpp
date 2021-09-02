@@ -8,9 +8,9 @@ int Factorial(int n){
         return 1;
     }
 
-    int prevFact = Factorial(n-1);
+    return n* Factorial(n-1);
 
-    return n*prevFact;
+   
 
     
 }

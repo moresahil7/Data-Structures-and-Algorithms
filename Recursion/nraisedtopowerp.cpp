@@ -10,8 +10,8 @@ int Power(int n, int p){
     }
 
 
-    int prevPower= Power(n , p-1);
-    return n*prevPower;
+  return n*Power(n , p-1);
+    
 }
 
 

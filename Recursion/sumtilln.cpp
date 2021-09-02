@@ -9,9 +9,9 @@ int Sum(int n){
 
 
 
-    int prevSum = Sum(n-1);
+    return n+ Sum(n-1);
     
-    return n+prevSum;
+    
 
 }
 
