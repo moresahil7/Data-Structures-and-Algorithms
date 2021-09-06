@@ -1,3 +1,3 @@
- // if(p==0){
-    //     return 1;
-    // }
+ if(str.length() == 0){
+        return ;
+    }

@@ -4,7 +4,7 @@ using namespace std;
 int lastocc(int arr[] , int n, int i, int key){
 
 
-    if(i ==n){
+    if(i == n){
         return -1;
     }
 
@@ -28,5 +28,5 @@ int lastocc(int arr[] , int n, int i, int key){
 int main() {
     int arr[] = {3,2,3,5,6};
 
-    cout<<lastocc(arr , 7 , 0 , 3);
+    cout<<lastocc(arr , 7 , 0 , 5);
 }
