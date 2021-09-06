@@ -11,7 +11,7 @@ bool sorted(int arr[] , int n){
 
 
 
-    bool restArray = sorted(arr+1 , n-1);
+    bool restArray = sorted(arr+1 , n-1);  //arr+1 indicates pointer will be at element with index 1  and (n-1) is size of array
     return (arr[0]<arr[1] && restArray);
 }
 

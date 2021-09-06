@@ -3,7 +3,8 @@ using namespace std;
 
 
 void dec(int n){
-    if(n == 0){
+    if(n == 1){
+        cout<<"1"<<endl;
         return;
     }
 
