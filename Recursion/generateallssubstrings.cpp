@@ -28,5 +28,5 @@ void generateSub(string str , string ans){
 }
 
 int main(){
-    generateSub("Sahil" , "");
+    generateSub("SAHIL" , "");
 }
