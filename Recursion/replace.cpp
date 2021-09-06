@@ -8,7 +8,7 @@ void replacePi(string str){
         return ;
     }
     if(str[0]=='p' && str[1]=='i'){
-        cout<<"3.14";
+        cout<<"3.14 ";
         replacePi(str.substr(2));
     }
     else{
@@ -25,6 +25,6 @@ void replacePi(string str){
 int main(){
 
 
-    replacePi("pikipipepi");
+    replacePi("pipipppiippiippiipppii");
 
 }
