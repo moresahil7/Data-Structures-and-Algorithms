@@ -19,7 +19,7 @@ int main(){
         cout<<"armstrong number"<<endl;
     }
     else{
-        cout<<"not an Armstrong number";
+        cout<<"not an Armstrong number"<<endl;
     }
 return 0;
 }

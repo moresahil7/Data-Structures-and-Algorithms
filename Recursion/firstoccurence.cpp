@@ -1,25 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int firstocc(int arr[] ,int n,int i, int key){
-    if(i==n){
+int firstocc(int arr[], int n, int i, int key)
+{
+    if (i == n)
+    {
         return -1;
     }
 
-
-    if (arr[i] == key){
+    if (arr[i] == key)
+    {
         return i;
     }
 
-    return firstocc(arr,n,i+1,key);
+    return firstocc(arr, n, i + 1, key);
 }
 
+int main()
+{
+    int arr[] = {3, 2, 3, 5, 6};
 
-
-int main() {
-    int arr[] = {3,2,3,5,6};
-
-    cout<<firstocc(arr , 7 , 0 , 3);
+    cout << firstocc(arr, 7, 0, 3);
 }
-
-

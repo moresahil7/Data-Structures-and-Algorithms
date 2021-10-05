@@ -1,24 +1,21 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int Factorial(int n){
+int Factorial(int n)
+{
 
-
-    if(n ==0){
+    if (n == 0)
+    {
         return 1;
     }
 
-    return n* Factorial(n-1);
-
-   
-
-    
+    return n * Factorial(n - 1);
 }
 
-
-int main() {
+int main()
+{
     int n;
-    cin>>n;
+    cin >> n;
 
-    cout<<Factorial(n);
+    cout << Factorial(n);
 }
