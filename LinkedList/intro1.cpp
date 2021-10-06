@@ -38,6 +38,18 @@ void insertAtTail(node* &head, int val) {
     temp->link = n;                 //value added at last of the linked list // temps link points towards n
 }  
 
+
+
+bool Search(node* head, int key){
+    
+    while(head != NULL){
+        if(head->data == key){
+            return true;
+        }
+        head= head->link;
+    }
+}
+
 void display(node* head){
 
     while(head != NULL){
@@ -59,4 +71,6 @@ int main(){
     display(head);
     insertAtHead(head, 10);
     display(head);
+
+    cout<<Search(head,2);
 }
