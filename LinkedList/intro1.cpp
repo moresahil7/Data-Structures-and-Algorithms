@@ -2,11 +2,12 @@
 using namespace std;
 
 
-
 class node{
     public:
     int data;
     node* link;
+
+
 
     node(int val){
         data = val;
@@ -14,36 +15,54 @@ class node{
     }
 };
 
+void insertAtHead(node* &head,int val){
 
-void insertAtHead(node* &head, int val){
     node* n = new node(val);
     n->link = head;
     head = n;
 }
 
+void insertAtTail(node* &head , int val){
+    node* n = new node(val);
+
+    if(head == NULL){
+        head =n ;
+        return;
+    }
+
+
+    node* temp = head;
+
+    while(temp->link != NULL){
+        temp = temp->link;
+
+    }
+
+    temp->link = n;
+
+
+
+}
 
 void deleteAtHead(node* &head){
 
     node* toDelete = head;
-
     head = head->link;
-
     delete toDelete;
 }
 
-
-
-void deletion(node* &head, int val){
-
+void deletion(node* &head , int val){
 
     if(head == NULL){
         return;
     }
 
-
-    if(head->link = NULL){
+    if(head-> link == NULL){
         deleteAtHead(head);
+        return;
     }
+
+
 
     node* temp = head;
 
@@ -59,63 +78,46 @@ void deletion(node* &head, int val){
     delete toDelete;
 }
 
-
-
-void insertAtTail(node* &head , int val){
-
-    node* n = new node(val);
-
-
-    if(head == NULL){
-        head = n;
-        return;
-    }
-
-    node* temp = head;
-
-
-    while(temp->link != NULL){
-        temp = temp->link;
-    }
-    temp->link = n;
-}
-
-bool search(node* head , int key){
-     while(head !=NULL){
-         if(head->data == key){
-             return true;
-         }
+void display(node* &head){
+     while(head != NULL){
+         cout<<head->data<<"->";
          head = head->link;
      }
-     return false;
+
+    cout<<endl;
 }
 
 
-void display(node* head){
+bool search(node* head, int key){
 
     while(head != NULL){
-        cout<<head->data<<"->";
-        head = head->link;
+        if(head->data == key){
+            return true;
+        }
+        head=head->link;
     }
-    cout<<endl;
+    return false;
 }
 
 
 int main(){
     node* head = NULL;
 
-    insertAtTail(head,10);
-    insertAtTail(head,12);
-    insertAtTail(head,13);
-    insertAtTail(head,14);
-    insertAtHead(head,9);
+    insertAtTail(head , 10);
+    insertAtTail(head , 11);
+    insertAtTail(head , 12);
+    insertAtTail(head , 13);
+    insertAtHead(head , 9);
 
-    deletion(head,13);
+    cout<<search(head , 10)<<endl;
+
+    deletion(head,10);
     deleteAtHead(head);
+
 
 
 
     display(head);
 
-    cout<<search(head,8)<<endl;
+
 }
