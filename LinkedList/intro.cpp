@@ -54,7 +54,29 @@ bool Search(node* head, int key){
 }
 
 
+void deleteAtHead(node* &head){
+    node* toDelete = head;
+
+    head = head->link;
+
+    delete toDelete;
+}
+
+
 void deletion(node* &head , int val){
+
+
+
+    if(head == NULL){
+        return;
+    }
+
+
+    if(head->link == NULL){
+        deleteAtHead(head);
+        return;
+
+    }
 
     node* temp = head;
 
@@ -90,9 +112,10 @@ int main(){
     insertAtHead(head, 15);
     insertAtHead(head, 18);
 
-    deletion(head,12);
+    // deletion(head,13);
+    deleteAtHead(head);
 
     display(head);
 
-    cout<<Search(head, 18);
+    cout<<Search(head, 12);
 }
