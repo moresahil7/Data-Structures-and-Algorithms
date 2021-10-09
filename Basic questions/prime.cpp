@@ -5,7 +5,10 @@ using namespace std;
 
 int main(){
 
-    int n;
+    int n,t;
+    cin>>t;   //no of test cases
+
+    while(t--){
     cin>>n;
     bool flag =true;
 
@@ -24,5 +27,6 @@ int main(){
     }
     else{
         cout<<" prime number";
+    }
     }
 }
