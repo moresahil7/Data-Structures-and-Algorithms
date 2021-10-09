@@ -43,7 +43,7 @@ void display(node* head){
      cout<<"NULL"<<endl;
 }
 
-
+//iterative way
 node* reverse(node* head){
 
     node* prevPtr = NULL;
