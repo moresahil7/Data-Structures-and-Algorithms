@@ -44,23 +44,8 @@ void display(node* head){
 }
 
 //iterative way
-node* reverse(node* head){
 
-    node* prevPtr = NULL;
-    node* currPtr = head;
-    node* linkPtr;
-
-    while(currPtr != NULL){
-        linkPtr = currPtr->link;
-        currPtr->link = prevPtr;
-
-
-        prevPtr = currPtr;
-        currPtr = linkPtr;
-    }
-    return prevPtr;
 }
-
 
 
 int main(){

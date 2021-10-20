@@ -54,15 +54,35 @@ node* revRecursively(node* &head){
 
 
 
-   node* newHead = revRecursively(head->link);
-
-    head->link->link =  head;
+    node* newHead = revRecursively(head->link);
+    head->link->link = head;
     head->link = NULL;
-
 
     return newHead;
 }
 
+//iterative method
+
+node* reverse(node* &head){
+    node* currPtr = head;
+    node* nextPtr;
+    node* prevPtr = NULL;
+
+    while(currPtr != NULL){
+        nextPtr = currPtr->link;
+        currPtr->link = prevPtr;
+
+
+
+
+        prevPtr = currPtr;
+        currPtr = nextPtr;
+
+    }
+
+    return prevPtr;
+
+}
 
 int main() {
 
@@ -75,8 +95,12 @@ int main() {
     insertAtTail(head , 4);
 
 
-    display(head);
-    node* reverse = revRecursively(head);
 
-    display(reverse);
+
+    display(head);
+
+    // node* newHead = revRecursively(head);
+    node* newHead = reverse(head);
+    display(newHead);
+
 }
