@@ -88,7 +88,8 @@ void makeCycle(node* &head , int pos){
 
 void removeCycle(node* &head){
     node* slow = head;
-    node* fast =head;
+    node* fast = head;
+
 
     do
     {
@@ -97,12 +98,11 @@ void removeCycle(node* &head){
     } while (slow != fast);
 
     fast = head;
-
     while(slow->link != fast->link){
         slow = slow->link;
         fast = fast->link;
     }
-    slow->link = NULL;
+    slow -> link = NULL;
     
 }
 
