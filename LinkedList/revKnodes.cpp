@@ -45,35 +45,33 @@ void display(node* head){
     }
     cout<<"NULL"<<endl;
 }
-
-node* reverseknode(node* &head, int k){
+node* revKnodes(node* &head , int k){
     node* prevPtr = NULL;
     node* currPtr = head;
     node* nextPtr;
 
     int count = 0;
-    while(currPtr != NULL && count<k){
+
+    while(currPtr != NULL & count<k){
         nextPtr = currPtr->link;
         currPtr->link = prevPtr;
 
         prevPtr = currPtr;
-        currPtr = nextPtr;
-
+        currPtr=nextPtr;
         count++;
-
     }
+
 
     if(nextPtr != NULL){
+    head->link = revKnodes(nextPtr , k);
 
-    head->link =  reverseknode(nextPtr , k);
+
     }
+
 
 
     return prevPtr;
-
-
 }
-
 
 int main(){
     node* head = NULL;
@@ -90,7 +88,7 @@ int main(){
     int k;
     cin>>k;
 
-    node* reverse = reverseknode(head, k);
+    node* reverse = revKnodes(head, k);
 
     display(reverse);
 }
