@@ -39,7 +39,26 @@ void insertAtTail(node* &head, int val){
     temp->link = n;
 
 }
+void insertNodeAtPosition(node* &head,int val,int pos){
+    node* n = new node(val);
 
+    if(pos == 1){
+        insertAtHead(head,val);
+        return;
+    }
+
+    node* temp = head;
+
+    int count = 1;
+    while(count != pos-1){
+        temp = temp->link;
+        count++;
+    }
+    node* t;
+    t = temp->link;
+    temp->link = n;
+    n->link = t;
+}
 
 
 bool Search(node* head, int key){
@@ -113,9 +132,11 @@ int main(){
     insertAtHead(head, 18);
 
     // deletion(head,13);
-    deleteAtHead(head);
+    // deleteAtHead(head);
 
+    // display(head);
+
+    // cout<<Search(head, 12);
+    insertNodeAtPosition(head,23,3);
     display(head);
-
-    cout<<Search(head, 12);
 }

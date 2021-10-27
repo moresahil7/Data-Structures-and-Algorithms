@@ -1,3 +1,5 @@
-  // // removeCycle(head);
-    // cout<<detectCycle(head);
+deleteAtHead(head);
+
     // display(head);
+
+    // cout<<Search(head, 12);
