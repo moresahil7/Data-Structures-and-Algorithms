@@ -47,20 +47,16 @@ void display(node* head){
 
 node* revRecursively(node* &head){
 
-    if(head == NULL || head->link == NULL){
+       if(head == NULL || head->link == NULL){
         return head;
     }
 
-
-
-
-    node* newHead = revRecursively(head->link);
+    node* result = revRecursively(head->link);
     head->link->link = head;
     head->link = NULL;
 
-    return newHead;
+    return result;
 }
-
 //iterative method
 
 node* reverse(node* &head){
@@ -99,8 +95,8 @@ int main() {
 
     display(head);
 
-    // node* newHead = revRecursively(head);
-    node* newHead = reverse(head);
+    node* newHead = revRecursively(head);
+    // node* newHead = reverse(head);
     display(newHead);
 
 }

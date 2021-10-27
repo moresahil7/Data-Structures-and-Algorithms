@@ -31,6 +31,8 @@ void insertAtTail(node* &head, int val){
 
 }
 
+//Iterative Way
+
 node* merge(node* &head1 , node* &head2){
     node* ptr1 = head1;
     node* ptr2 = head2;
@@ -66,6 +68,32 @@ node* merge(node* &head1 , node* &head2){
     return dummyNode->next;
 }
 
+//recursive way
+
+node* mergeRecursively(node* &head1,node* &head2){
+
+    if(head1 == NULL){
+        return head2;
+    }
+    if(head2 == NULL){
+        return head1;
+    }
+
+   node* result;
+
+   if(head1->data < head2->data){
+       result = head1;
+       result->next = mergeRecursively(head1->next , head2);
+   }
+   else{
+       result = head2;
+       result->next = mergeRecursively(head1,head2->next);
+
+   }
+   return result;
+}
+
+
 void display(node* head){
     node* temp = head;
 
@@ -95,7 +123,8 @@ int main() {
     display(head1);
     display(head2);
 
-   node* result = merge(head1,head2);
+//    node* result = merge(head1,head2);
+   node* result = mergeRecursively(head1,head2);
    display(result);
 
  
