@@ -34,22 +34,23 @@ void insertAtTail(node* &head, int val){
 node* merge(node* &head1 , node* &head2){
     node* ptr1 = head1;
     node* ptr2 = head2;
-    
-    node* dummyNode =  new node(-1);
+    node* dummyNode = new node(-1);
     node* ptr3 = dummyNode;
 
 
     while(ptr1 != NULL && ptr2 != NULL){
         if(ptr1->data < ptr2->data){
             ptr3->next = ptr1;
-            ptr1=ptr1->next;
+            ptr1 = ptr1->next;
         }
         else{
-            ptr3->next = ptr2;
+            ptr3->next =  ptr2;
             ptr2 = ptr2->next;
         }
+
         ptr3 = ptr3->next;
     }
+
     while(ptr1 != NULL){
         ptr3->next = ptr1;
         ptr1 = ptr1->next;
@@ -60,6 +61,8 @@ node* merge(node* &head1 , node* &head2){
         ptr2 = ptr2->next;
         ptr3 = ptr3->next;
     }
+
+
     return dummyNode->next;
 }
 
@@ -77,10 +80,10 @@ void display(node* head){
 int main() {
     node* head1 = NULL;
 
-   int arr[] = {1,2,3,4,5};
+   int arr[] = {1,3,5,7,9};
     node* head2 = NULL;
 
-   int arr1[] = {6,7,8};
+   int arr1[] = {2,4,6};
 
    for(int i=0;i<5;i++){
        insertAtTail(head1 , arr[i]);
