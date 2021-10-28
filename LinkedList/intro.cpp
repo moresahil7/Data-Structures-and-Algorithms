@@ -5,12 +5,12 @@ using namespace std;
 class node{
     public:
     int data;
-    node* link;
+    node* next;
 
 
     node(int val){
         data = val;
-        link = NULL;
+        next = NULL;
     }
 };
 
@@ -18,7 +18,7 @@ class node{
 void insertAtHead(node* &head, int val){
     node* n = new node(val);
 
-    n->link = head;
+    n->next = head;
     head = n;
 }
 
@@ -32,13 +32,50 @@ void insertAtTail(node* &head, int val){
 
 
     node* temp = head;
-    while(temp->link != NULL){
-        temp=temp->link;
+    while(temp->next != NULL){
+        temp=temp->next;
     }
 
-    temp->link = n;
+    temp->next = n;
 
 }
+
+int getnode(node* &head, int pos){
+    node* temp = head;
+    int count = 1;
+    while(count != pos){
+        temp = temp->next;
+        count++;
+    }
+   cout<<temp->data;
+
+    
+}
+
+int length(node* &head){
+    node* temp = head;
+
+    int l=0;
+    while(temp!=NULL){
+        l++;
+        temp = temp->next;
+    }
+    return l;
+}
+int getnodefromLast(node* &head, int positionfromtail){
+    node* temp = head;
+    int l=length(head);
+    int count = 1;
+
+    while(count != l-positionfromtail+1){
+        temp=temp->next;
+        count++;
+    }
+    cout<<temp->data;
+
+
+}
+
 void insertNodeAtPosition(node* &head,int val,int pos){
     node* n = new node(val);
 
@@ -51,13 +88,13 @@ void insertNodeAtPosition(node* &head,int val,int pos){
 
     int count = 1;
     while(count != pos-1){
-        temp = temp->link;
+        temp = temp->next;
         count++;
     }
     node* t;
-    t = temp->link;
-    temp->link = n;
-    n->link = t;
+    t = temp->next;
+    temp->next = n;
+    n->next = t;
 }
 
 
@@ -67,7 +104,7 @@ bool Search(node* head, int key){
             return true;
 
         }
-        head = head->link;
+        head = head->next;
     }
     return false;
 }
@@ -76,7 +113,7 @@ bool Search(node* head, int key){
 void deleteAtHead(node* &head){
     node* toDelete = head;
 
-    head = head->link;
+    head = head->next;
 
     delete toDelete;
 }
@@ -91,7 +128,7 @@ void deletion(node* &head , int val){
     }
 
 
-    if(head->link == NULL){
+    if(head->next == NULL){
         deleteAtHead(head);
         return;
 
@@ -99,16 +136,16 @@ void deletion(node* &head , int val){
 
     node* temp = head;
 
-    while(temp->link->data != val){
+    while(temp->next->data != val){
 
-        temp=temp->link;
+        temp=temp->next;
 
     }
 
-    node* toDelete = temp->link;
+    node* toDelete = temp->next;
 
 
-    temp->link = temp->link->link;
+    temp->next = temp->next->next;
     delete toDelete;
 
 }
@@ -116,7 +153,7 @@ void deletion(node* &head , int val){
 void display(node* head){
      while(head != NULL){
          cout<<head->data<<"->";
-         head = head->link;
+         head = head->next;
      }
      cout<<"NULL"<<endl;
 }
@@ -128,8 +165,8 @@ int main(){
     insertAtTail(head, 13);
     insertAtTail(head, 14);
 
-    insertAtHead(head, 15);
-    insertAtHead(head, 18);
+    insertAtTail(head, 15);
+    // insertAtHead(head, 18);
 
     // deletion(head,13);
     // deleteAtHead(head);
@@ -137,6 +174,9 @@ int main(){
     // display(head);
 
     // cout<<Search(head, 12);
-    insertNodeAtPosition(head,23,3);
+    // insertNodeAtPosition(head,23,3);
+    // display(head);
+    // getnode(head,3);
     display(head);
+    getnodefromLast(head,2);
 }

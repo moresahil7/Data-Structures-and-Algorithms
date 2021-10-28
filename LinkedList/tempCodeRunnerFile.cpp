@@ -1,5 +1,2 @@
-deleteAtHead(head);
-
+ // insertNodeAtPosition(head,23,3);
     // display(head);
-
-    // cout<<Search(head, 12);
