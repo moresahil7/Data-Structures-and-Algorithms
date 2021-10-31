@@ -30,27 +30,20 @@ void insertAtTail(node* &head, int val){
 }
 
 void evenAfterOdd(node* &head){
-
-    if(head == NULL ||head->next == NULL){
-        return;
-    }
     node* odd = head;
     node* even = head->next;
     node* evenStart = even;
 
-    while(odd->next!=NULL && even != NULL && even->next != NULL){
+    while(odd->next != NULL && even !=NULL && even->next !=NULL){
+
         odd->next = even->next;
         odd = odd->next;
         even->next = odd->next;
         even = even->next;
+
     }
+
     odd->next = evenStart;
-
- 
-
-
-  
- 
 }
 
 void display(node* head){

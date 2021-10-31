@@ -59,6 +59,12 @@ int length(node* &head){
     
 }
 
+int getintersectionPoint(node* head1,node* &head2){
+    
+
+}
+
+
 int intersection(node* &head1,node* &head2){
    int l1 = length(head1);
    int l2 = length(head2);

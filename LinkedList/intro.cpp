@@ -63,6 +63,8 @@ int length(node* &head){
     return l;
 }
 int getnodefromLast(node* &head, int positionfromtail){
+    
+    
     node* temp = head;
     int l=length(head);
     int count = 1;
@@ -75,6 +77,7 @@ int getnodefromLast(node* &head, int positionfromtail){
 
 
 }
+
 
 void insertNodeAtPosition(node* &head,int val,int pos){
     node* n = new node(val);
@@ -158,25 +161,55 @@ void display(node* head){
      cout<<"NULL"<<endl;
 }
 
+void deleteDuplicates(node* &head){
+    if(head == NULL){
+        return;
+    }
+  
+     node* temp = head;
+
+
+    while(temp->next != NULL){
+        if(temp->data != temp->next->data){
+            temp = temp->next;
+        }
+
+        else{
+            temp->next = temp->next->next;
+        }
+    }
+    
+     
+
+}
+
+
 int main(){
     node* head = NULL;
 
-    insertAtTail(head, 12);
-    insertAtTail(head, 13);
-    insertAtTail(head, 14);
+    insertAtTail(head, 0);
+    insertAtTail(head, 1);
+    insertAtTail(head, 2);
+    insertAtTail(head, 2);
+    insertAtTail(head, 2);
+    insertAtTail(head, 3);
+    insertAtTail(head, 4);
+    // insertAtTail(head, 4);
 
-    insertAtTail(head, 15);
+    // insertAtTail(head, 4);
+    // insertAtTail(head, 4);
     // insertAtHead(head, 18);
 
     // deletion(head,13);
     // deleteAtHead(head);
 
-    // display(head);
+    display(head);
 
     // cout<<Search(head, 12);
     // insertNodeAtPosition(head,23,3);
     // display(head);
     // getnode(head,3);
+    deleteDuplicates(head);
     display(head);
-    getnodefromLast(head,2);
+    // getnodefromLast(head,2);
 }
