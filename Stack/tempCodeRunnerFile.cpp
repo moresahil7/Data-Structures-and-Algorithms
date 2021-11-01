@@ -1,1 +1,1 @@
- st.push(23);
+reverse(st);
