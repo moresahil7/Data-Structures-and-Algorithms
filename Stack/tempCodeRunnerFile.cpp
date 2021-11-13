@@ -1,1 +1,1 @@
-reverse(st);
+ cout<<prefixEvaluation("-+*7*45+20");
