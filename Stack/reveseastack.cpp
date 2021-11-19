@@ -21,7 +21,7 @@ void insertAtBottom(stack<int> &st , int element){
     st.pop();
 
 
-    insertAtBottom(st,element);
+    insertAtBottom(st.element);
 
     st.push(topelement);
     

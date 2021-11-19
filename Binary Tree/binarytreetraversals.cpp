@@ -46,7 +46,7 @@ void postorder(struct node* root){
 
     postorder(root->left);
     postorder(root->right);
-    cout<<root->data;
+    cout<<root->data<<" ";
 
 }
 
@@ -60,9 +60,10 @@ int main(){
     root->right->left = new node(6);
     root->right->right = new node(7);
 
-    cout<<"preorder";
+    cout<<"preorder"<<endl;
     preorder(root);
-    cout<<"inorder";
+    cout<<"inorder"<<endl;
     inorder(root);
+    cout<<"postorder"<<endl;
     postorder(root);
 }
