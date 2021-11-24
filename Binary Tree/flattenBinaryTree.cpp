@@ -42,7 +42,7 @@ void flatten(Node* root){
     }
     flatten(root->right);
 }
- 
+]
 void inorder(Node* root){
 
     if(root == NULL){
