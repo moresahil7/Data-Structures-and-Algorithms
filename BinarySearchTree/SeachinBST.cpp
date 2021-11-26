@@ -62,7 +62,7 @@ int main(){
     inorder(root);
     cout<<endl;
 
-    if(searchInBST(root,9) == NULL){
+    if(searchInBST(root,5) == NULL){
         cout<<"key doesnt exists"<<endl;
     }
     else{
