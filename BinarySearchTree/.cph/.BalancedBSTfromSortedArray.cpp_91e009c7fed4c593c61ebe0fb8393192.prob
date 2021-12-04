@@ -1,0 +1,1 @@
+{"name":"Local: BalancedBSTfromSortedArray","url":"d:\\DSA C++\\BinarySearchTree\\BalancedBSTfromSortedArray.cpp","tests":[{"id":1638596739399,"input":"10 20 30 40 50\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\DSA C++\\BinarySearchTree\\BalancedBSTfromSortedArray.cpp","group":"local","local":true}
