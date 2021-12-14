@@ -1,6 +1,9 @@
 #include<iostream>
 using namespace std;
  
+// code can be optimized using dynamic programming
+
+
 
 
 

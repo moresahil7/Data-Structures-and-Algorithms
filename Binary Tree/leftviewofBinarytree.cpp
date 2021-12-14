@@ -17,31 +17,51 @@ struct Node{
 
 void leftview(Node* root){
 
+    if(root == NULL){
+        return;
+    }
+
     queue<Node*> q;
     q.push(root);
 
-while(!q.empty()){
-    int n = q.size();
+    
 
-    for(int i = 0;i<n;i++){
+    while(!q.empty()){
 
+        int n = q.size();
+
+        for(int i=0;i<n;i++){
         Node* curr = q.front();
         q.pop();
+        
 
-        if(i == 0){
+        if(i == 0 ){
             cout<<curr->data<<" ";
         }
 
         if(curr->left != NULL){
             q.push(curr->left);
         }
+
         if(curr->right != NULL){
             q.push(curr->right);
         }
+        }
+
+
+
 
     }
+}
 
+void inorder(Node* root){
+    if(root == NULL){
+        return;
     }
+
+    inorder(root->left);
+    cout<<root->data;
+    inorder(root->right);
 }
 
 
@@ -54,6 +74,7 @@ int main(){
     root->left->right = new Node(5);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
+    // inorder(root);
     leftview(root);
 
 }
