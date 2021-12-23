@@ -17,3 +17,6 @@ int main(){
 
     cout<<fibonacci(n);
 }
+
+
+//time complexity big O of 2^n
