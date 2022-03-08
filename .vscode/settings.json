@@ -39,7 +39,15 @@
         "deque": "cpp",
         "stack": "cpp",
         "string": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "xtree": "cpp",
+        "queue": "cpp",
+        "xhash": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled",
     "cmake.configureOnOpen": false

@@ -33,7 +33,7 @@ while(!q.empty()){
         Node* curr = q.front();
         q.pop();
 
-        if(i==n-1){
+        if(i==n-1 ){
             cout<<curr->data<<" ";
         }
 

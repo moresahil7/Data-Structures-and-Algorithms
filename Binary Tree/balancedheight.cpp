@@ -20,11 +20,19 @@ struct Node{
 
 int height(Node* root){
     if(root == NULL){
-        return -1;
+        return 0;
     }
 
         int lh = height(root->left);
+        if(lh == -1) return -1;
         int rh = height(root->right);
+        if(rh == -1) return -1;
+
+
+        if(abs(lh-rh)>1){
+            return -1;
+        }
+
 
         return max(lh,rh)+1;
     
@@ -34,27 +42,13 @@ int height(Node* root){
 
 
 bool isBalanced(Node* root){
-    if(root == NULL){
+
+    if(height(root) != -1){
         return true;
     }
 
-    if(isBalanced(root->left) == false){
-        return false;
-    }
-    if(isBalanced(root->right) == false){
-        return false;
-    }
-
-
-    int lh = height(root->left);
-    int rh = height(root->right);
-
-    if(abs(lh-rh) <= 1){
-        return true;
-    }
-    else{
-        return false;
-    }
+    return false;
+    
 }
 
 void preorder(Node* root){

@@ -1,31 +1,69 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<iostream>
+#include<algorithm>
+#include<vector>
+#include<queue>
 using namespace std;
 
-int main()
-{
-    int V, E;
-    cin >> V >> E;
-    vector<int> g[V + 1];
 
-    for (int i = 0; i < E; i++)
-    {
-        int u, v;
 
-        cin >> u >> v;
 
-        g[u].push_back(v);
-        g[v].push_back(u);
-    }
+vector<int> bfs(int V, vector<int> adj[]){
+    vector<int> bfs;
+    vector<int> visited(V+1,0);
+    
+    queue<int> q;
+    q.push(1);
+    visited[1] = 1;
+    
 
-    for (int i = 1; i <= V; i++)
-    {
-        cout << i << "-> ";
-        for (int j = 0; j < g[i].size(); j++)
-        {
-            cout << g[i][j] << " ";
+
+    while(!q.empty()){
+
+        int node = q.front();
+        q.pop();
+        bfs.push_back(node);
+
+
+        for(auto it: adj[node]){
+
+            if(!visited[it]){
+                q.push(it);
+                visited[it] = 1;
+            }
         }
-        cout << endl;
     }
+    return bfs;
+}
+
+
+
+
+int main(){
+
+
+    int V,E;
+
+    cout<<"Enter no of Vertices: ";
+    cin>>V;
+    cout<<"Enter no of Edges: ";
+    cin>>E;
+
+    vector <int>adj[V+1];
+
+
+    for(int i=1;i<=E;i++){
+
+        int u,v;
+        cin>>u>>v;
+
+        adj[u].push_back(v);
+        // adj[v].push_back(u);
+    }
+
+    vector<int> ans = bfs(V,adj);
+
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
+
 }

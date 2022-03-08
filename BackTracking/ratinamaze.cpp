@@ -41,7 +41,7 @@ int main()
 {
     int n;
     cin >> n;
-    int** arr = new int*[n]; //creted array dynamically of pointers of n size
+    int** arr = new int*[n]; //created array dynamically of pointers of n size
     //allocating memory dynamically if size n for each row
     for (int i = 0; i < n; i++)
     {

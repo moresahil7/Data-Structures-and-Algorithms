@@ -40,11 +40,11 @@ bool identicalBST(Node* root1, Node* root2){
 
 int main(){
 
-    Node* root1 = new Node(1);
+    Node* root1 = new Node(5);
     root1->left = new Node(2);
     root1->right = new Node(3);
 
-    Node* root2 = new Node(1);
+    Node* root2 = new Node(5);
     root2->left = new Node(2);
     root2->right = new Node(3);
 

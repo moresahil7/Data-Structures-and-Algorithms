@@ -1,9 +1,9 @@
 #include <stdio.h>
 void main()
 {
-    int capacity = 50;
-    int value[] = {60, 100, 120};
-    int weight[] = {10, 20, 30};
+    int capacity = 60;
+    int value[] = {70,80,90,200};
+    int weight[] = {20,30,40,70};
     int no_items = 3, cur_weight, item;
     int used[10];
     float total_profit;

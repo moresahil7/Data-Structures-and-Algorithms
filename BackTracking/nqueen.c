@@ -1,10 +1,10 @@
 #include <stdio.h> //standard  I/O
 #include <stdlib.h>
 #include <string.h>
-#include<math.h>
- 
+#include <math.h>
+
 int a[30], count;
- 
+
 int place(int i, int j)
 {
     int k;
@@ -14,14 +14,14 @@ int place(int i, int j)
         {
             return 0;
         }
-        else if (abs(a[k] - j) == abs(k - i))  //for diagonal logic
+        else if (abs(a[k] - j) == abs(k - i))
         {
             return 0;
         }
     }
     return 1;
 }
- 
+
 void print_func(int n)
 {
     int i, j, k;
@@ -36,7 +36,7 @@ void print_func(int n)
             {
                 printf("\t 1");
             }
- 
+
             else
             {
                 printf("\t 0");
@@ -44,10 +44,10 @@ void print_func(int n)
         }
     }
 }
- 
+
 void queen(int i, int n)
 {
-    int j, k;
+    int j;
     for (j = 1; j <= n; j++)
     {
         if (place(i, j))
@@ -64,7 +64,7 @@ void queen(int i, int n)
         }
     }
 }
- 
+
 int main()
 {
     int n;
@@ -73,4 +73,3 @@ int main()
     queen(1, n);
     return 0;
 }
- 
