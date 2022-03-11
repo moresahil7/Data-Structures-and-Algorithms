@@ -56,7 +56,7 @@ int main() {
 
 
 
-    for(int i=1;i<V;i++){
+    for(int i=1;i<=V;i++){
         cout<<i<<"-->";
 
         for(int j=0;j<adj[i].size();j++){
