@@ -4,64 +4,52 @@
 #include <string>
 using namespace std;
 
-void ratPathDfs(int row, int col, vector<string> &V, string s, int n, vector<vector<int>> &m, vector<vector<int>> &visited)
-{
 
-    if (row < 0 || col < 0 || row >= n || col >= n) 
-    {
+
+
+
+void ratPathDfs(int row, int col,int n,vector<string> &V,string s, vector<vector<int>> &visited, vector<vector<int>> &m){
+
+    if(row<0 || row>=n || col<0 || col>=n){
         return;
     }
 
-    if (m[row][col] == 0 || visited[row][col] == 1) 
-    {
+    if(m[row][col] == 0 || visited[row][col] == 1 ){
         return;
     }
 
-    if (row == n - 1 && col == n - 1)  //when we reach destination
-    {
+    if(row == n-1 && col == n-1){
         V.push_back(s);
         return;
     }
 
-  
-
-    // cout<<row<<" row ";
-    // cout<<col<<" col ";
-
-
     visited[row][col] = 1;
 
-    ratPathDfs(row + 1, col, V, s + "D", n, m, visited);
-    ratPathDfs(row - 1, col, V, s + "U", n, m, visited); 
-    ratPathDfs(row, col + 1, V, s + "R", n, m, visited);
-    ratPathDfs(row, col - 1, V, s + "L", n, m, visited);
+    ratPathDfs(row+1,col,n,V,s+"D", visited,m);
+    ratPathDfs(row-1,col,n,V,s+"U", visited,m);
+    ratPathDfs(row,col+1,n,V,s+"R", visited,m);
+    ratPathDfs(row,col-1,n,V,s+"L", visited,m);
+
 
     visited[row][col] = 0;
+
+
+
+
+
+
 }
-
-vector<string> ratInMaze(int n, vector<vector<int>> &m)
-{
-
+vector<string> ratInmaze(int n, vector<vector<int>> &m){
     vector<string> V;
-
-    vector<vector<int>> visited(n, vector<int>(n, 0));
-
-    if (m[0][0] == 0)
-    {
+    vector<vector<int>> visited(n, vector<int>(n,0));
+    if(m[0][0] == 0){
         return V;
     }
-
-    if (m[n - 1][n - 1] == 0)
-    {
+    if(m[n-1][n-1] == 0){
         return V;
     }
-
-    string s = "";
-
-
-    ratPathDfs(0, 0, V, s, n, m, visited);
-
-    sort(V.begin(),V.end());
+    string s;
+    ratPathDfs(0,0,n,V,s,visited,m);
     return V;
 }
 
@@ -77,7 +65,7 @@ int main()
 
     int n = 4;
 
-    vector<string> s = ratInMaze(n, m);
+    vector<string> s = ratInmaze(n, m);
 
     for(int i=0;i<s.size();i++)
     {
